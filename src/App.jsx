@@ -1,10 +1,9 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
-function App() {
+const App = () => {
   return (
     <Router>
       <div className="min-h-screen bg-gray-900 text-white p-8">
@@ -37,6 +36,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;
