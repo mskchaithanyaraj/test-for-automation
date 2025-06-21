@@ -38,6 +38,12 @@ const App = () => {
                     <span>Home</span>
                   </Link>
                   <Link
+                    to="/tracker"
+                    className="premium-nav-link theme-text-primary flex items-center space-x-2"
+                  >
+                    <span>Tracker</span>
+                  </Link>
+                  <Link
                     to="/about"
                     className="premium-nav-link theme-text-primary flex items-center space-x-2"
                   >
@@ -48,12 +54,6 @@ const App = () => {
                     className="premium-nav-link theme-text-primary flex items-center space-x-2"
                   >
                     <span>Contact</span>
-                  </Link>
-                  <Link
-                    to="/tracker"
-                    className="premium-nav-link theme-text-primary flex items-center space-x-2"
-                  >
-                    <span>Tracker</span>
                   </Link>
                 </div>
 
@@ -68,9 +68,9 @@ const App = () => {
           <main className="max-w-7xl mx-auto px-6 py-8">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/tracker" element={<RandomTracker />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/tracker" element={<RandomTracker />} />
             </Routes>
           </main>
         </div>
