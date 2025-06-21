@@ -1,10 +1,12 @@
 const Contact = () => (
-  <div>
+  <div className="theme-bg-primary theme-text-primary">
     <h1 className="text-3xl font-bold mb-4">Contact Page</h1>
-    <p>mskchaithanyaraj@gmail.com</p>
-    <div className="mt-4 p-4 bg-gray-800 rounded">
+    <p className="theme-text-secondary">mskchaithanyaraj@gmail.com</p>
+    <div className="mt-4 p-4 theme-bg-secondary theme-border-primary border rounded">
       <h2 className="text-xl font-semibold mb-2">Get in Touch</h2>
-      <p>Feel free to reach out for any questions about automation testing.</p>
+      <p className="theme-text-secondary">
+        Feel free to reach out for any questions about automation testing.
+      </p>
     </div>
   </div>
 );

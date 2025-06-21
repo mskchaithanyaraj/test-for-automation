@@ -3,7 +3,6 @@ import Buttons from "../components/Buttons";
 import Checkboxes from "../components/Checkboxes";
 import SearchInput from "../components/SearchInput";
 import AutomationIndicator from "../components/AutomationIndicator";
-import { Form } from "react-router-dom";
 import FormInputs from "../components/FormInputs";
 
 const Home = () => {
@@ -13,10 +12,12 @@ const Home = () => {
   const simulateAutomation = () => {
     setIsAutomationRunning(true);
     const steps = [
-      "Clicking buttons...",
-      "Checking checkboxes...",
-      "Filling search input...",
-      "Automation complete!",
+      "Initializing automation suite...",
+      "Executing button interactions...",
+      "Processing checkbox selections...",
+      "Validating search functionality...",
+      "Completing form submissions...",
+      "✓ Automation suite completed successfully!",
     ];
 
     steps.forEach((step, index) => {
@@ -26,24 +27,45 @@ const Home = () => {
           setTimeout(() => {
             setIsAutomationRunning(false);
             setAutomationStep("");
-          }, 2000);
+          }, 3000);
         }
-      }, index * 1500);
+      }, index * 1200);
     });
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-8">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold">TEST FOR AUTOMATION</h1>
-        <button
-          onClick={simulateAutomation}
-          disabled={isAutomationRunning}
-          className="bg-green-600 hover:bg-green-700 disabled:bg-gray-600 px-4 py-2 rounded font-semibold transition-all duration-300"
-          data-testid="start-automation"
-        >
-          {isAutomationRunning ? "Running..." : "Start Automation"}
-        </button>
+    <div className="space-y-8 premium-animate-slide-up">
+      <div className="premium-card p-8">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+          <div>
+            <h1 className="premium-heading text-4xl lg:text-5xl mb-3">
+              Automation Testing Suite
+            </h1>
+            <p className="theme-text-secondary text-lg max-w-2xl">
+              Comprehensive testing environment for UI automation scenarios.
+              Test button interactions, form submissions, search functionality,
+              and more.
+            </p>
+          </div>
+
+          <button
+            onClick={simulateAutomation}
+            disabled={isAutomationRunning}
+            className={`premium-button premium-button-primary text-white font-semibold px-8 py-3 ${
+              isAutomationRunning ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+            data-testid="start-automation"
+          >
+            {isAutomationRunning ? (
+              <div className="flex items-center space-x-2">
+                <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                <span>Running Tests...</span>
+              </div>
+            ) : (
+              "🚀 Start Automation"
+            )}
+          </button>
+        </div>
       </div>
 
       <AutomationIndicator
@@ -51,13 +73,12 @@ const Home = () => {
         currentStep={automationStep}
       />
 
-      <SearchInput />
-
-      <Buttons />
-
-      <Checkboxes />
-
-      <FormInputs />
+      <div className="grid gap-8">
+        <SearchInput />
+        <Buttons />
+        <Checkboxes />
+        <FormInputs />
+      </div>
     </div>
   );
 };
