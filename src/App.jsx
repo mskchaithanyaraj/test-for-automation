@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import RandomTracker from "./pages/RandomTracker";
 import ThemeToggle from "./components/ThemeToggle";
+import logo from "./assets/logo.png";
 
 const App = () => {
   return (
@@ -16,9 +17,11 @@ const App = () => {
               <div className="flex justify-between items-center">
                 {/* Logo Section */}
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-lg">
-                    <span className="text-white font-bold text-base">AT</span>
-                  </div>
+                  <img
+                    src={logo}
+                    alt="AutoTest Logo"
+                    className="w-10 h-10 rounded-xl object-cover shadow-lg"
+                  />
                   <div>
                     <span className="font-bold text-xl theme-text-primary">
                       AutoTest
