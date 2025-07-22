@@ -116,7 +116,7 @@ const EdgeCases = () => {
           <div className="premium-form-group">
             <label className="premium-label">SPAN styled like an input</label>
             <span
-              className="premium-input w-full block p-3 border rounded-lg bg-white cursor-text"
+              className="premium-input w-full block p-3 border rounded-lg theme-bg-primary cursor-text"
               data-testid="fake-input-span"
               onClick={() => alert("This is not actually an input!")}
             >
@@ -161,7 +161,7 @@ const EdgeCases = () => {
                 </span>
               </div>
               {isDropdownOpen && (
-                <div className="absolute top-full left-0 right-0 mt-1 bg-white border rounded-lg shadow-lg z-10 theme-bg-primary">
+                <div className="absolute top-full left-0 right-0 mt-1 theme-bg-primary theme-border-primary border rounded-lg shadow-lg z-10">
                   {[
                     "Option 1",
                     "Option 2",
@@ -171,7 +171,7 @@ const EdgeCases = () => {
                   ].map((option) => (
                     <div
                       key={option}
-                      className="p-3 hover:bg-gray-100 cursor-pointer border-b last:border-b-0"
+                      className="p-3 hover:theme-bg-secondary cursor-pointer theme-border-primary border-b last:border-b-0 theme-text-primary"
                       onClick={() => {
                         setEdgeFormData((prev) => ({
                           ...prev,
@@ -375,8 +375,8 @@ const EdgeCases = () => {
             </label>
             <div className="border rounded-lg p-4 theme-bg-secondary">
               <div className="border rounded p-3 theme-bg-tertiary">
-                <div className="border rounded p-2 bg-white">
-                  <div className="border rounded p-2 bg-gray-50">
+                <div className="border rounded p-2 theme-bg-primary">
+                  <div className="border rounded p-2 theme-bg-secondary">
                     <button
                       className="premium-button premium-button-primary w-full"
                       data-testid="deeply-nested-button"
@@ -402,16 +402,24 @@ const EdgeCases = () => {
               <table className="w-full border-collapse border theme-border-primary">
                 <thead>
                   <tr className="theme-bg-secondary">
-                    <th className="border p-2 text-left">Name</th>
-                    <th className="border p-2 text-left">Input</th>
-                    <th className="border p-2 text-left">Action</th>
+                    <th className="border theme-border-primary p-2 text-left theme-text-primary">
+                      Name
+                    </th>
+                    <th className="border theme-border-primary p-2 text-left theme-text-primary">
+                      Input
+                    </th>
+                    <th className="border theme-border-primary p-2 text-left theme-text-primary">
+                      Action
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   {["Row 1", "Row 2", "Row 3"].map((row, index) => (
                     <tr key={index}>
-                      <td className="border p-2">{row}</td>
-                      <td className="border p-2">
+                      <td className="border theme-border-primary p-2 theme-text-primary">
+                        {row}
+                      </td>
+                      <td className="border theme-border-primary p-2">
                         <input
                           type="text"
                           className="premium-input w-full"
@@ -419,7 +427,7 @@ const EdgeCases = () => {
                           data-testid={`table-input-${index}`}
                         />
                       </td>
-                      <td className="border p-2">
+                      <td className="border theme-border-primary p-2">
                         <button
                           className="premium-button premium-button-secondary text-sm"
                           data-testid={`table-button-${index}`}
