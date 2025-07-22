@@ -3,7 +3,6 @@ import Buttons from "../components/Buttons";
 import Checkboxes from "../components/Checkboxes";
 import SearchInput from "../components/SearchInput";
 import AutomationIndicator from "../components/AutomationIndicator";
-import FormInputs from "../components/FormInputs";
 
 const Home = () => {
   const [isAutomationRunning, setIsAutomationRunning] = useState(false);
@@ -77,7 +76,6 @@ const Home = () => {
         <SearchInput />
         <Buttons />
         <Checkboxes />
-        <FormInputs />
       </div>
     </div>
   );

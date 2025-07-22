@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import RandomTracker from "./pages/RandomTracker";
+import Forms from "./pages/Forms";
+import EdgeCases from "./pages/EdgeCases";
 import ThemeToggle from "./components/ThemeToggle";
 import logo from "./assets/logo.png";
 
@@ -47,6 +49,18 @@ const App = () => {
                     <span>Tracker</span>
                   </Link>
                   <Link
+                    to="/forms"
+                    className="premium-nav-link theme-text-primary flex items-center space-x-2"
+                  >
+                    <span>Forms</span>
+                  </Link>
+                  <Link
+                    to="/edge-cases"
+                    className="premium-nav-link theme-text-primary flex items-center space-x-2"
+                  >
+                    <span>Edge Cases</span>
+                  </Link>
+                  <Link
                     to="/about"
                     className="premium-nav-link theme-text-primary flex items-center space-x-2"
                   >
@@ -72,6 +86,8 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/tracker" element={<RandomTracker />} />
+              <Route path="/forms" element={<Forms />} />
+              <Route path="/edge-cases" element={<EdgeCases />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
